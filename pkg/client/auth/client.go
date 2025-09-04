@@ -3,8 +3,8 @@ package auth
 import (
 	"context"
 
-	"github.com/zitadel/zitadel-go/v3/pkg/client/zitadel"
-	"github.com/zitadel/zitadel-go/v3/pkg/client/zitadel/auth"
+	"github.com/atefhaloui/zitadel-go/v3/pkg/client/zitadel"
+	"github.com/atefhaloui/zitadel-go/v3/pkg/client/zitadel/auth"
 )
 
 type Client struct {

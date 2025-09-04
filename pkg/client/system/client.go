@@ -12,9 +12,9 @@ import (
 	"github.com/zitadel/oidc/v3/pkg/client"
 	"github.com/zitadel/oidc/v3/pkg/oidc"
 
-	"github.com/zitadel/zitadel-go/v3/pkg/client/middleware"
-	"github.com/zitadel/zitadel-go/v3/pkg/client/zitadel"
-	"github.com/zitadel/zitadel-go/v3/pkg/client/zitadel/system"
+	"github.com/atefhaloui/zitadel-go/v3/pkg/client/middleware"
+	"github.com/atefhaloui/zitadel-go/v3/pkg/client/zitadel"
+	"github.com/atefhaloui/zitadel-go/v3/pkg/client/zitadel/system"
 )
 
 type Client struct {

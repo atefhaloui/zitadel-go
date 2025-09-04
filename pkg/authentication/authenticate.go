@@ -10,7 +10,7 @@ import (
 	"github.com/google/uuid"
 	"github.com/zitadel/oidc/v3/pkg/crypto"
 
-	"github.com/zitadel/zitadel-go/v3/pkg/zitadel"
+	"github.com/atefhaloui/zitadel-go/v3/pkg/zitadel"
 )
 
 var (

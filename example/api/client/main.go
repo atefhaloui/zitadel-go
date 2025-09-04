@@ -10,12 +10,12 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/zitadel/zitadel-go/v3/pkg/authorization"
-	"github.com/zitadel/zitadel-go/v3/pkg/authorization/oauth"
-	"github.com/zitadel/zitadel-go/v3/pkg/client"
-	"github.com/zitadel/zitadel-go/v3/pkg/client/zitadel/auth"
-	"github.com/zitadel/zitadel-go/v3/pkg/http/middleware"
-	"github.com/zitadel/zitadel-go/v3/pkg/zitadel"
+	"github.com/atefhaloui/zitadel-go/v3/pkg/authorization"
+	"github.com/atefhaloui/zitadel-go/v3/pkg/authorization/oauth"
+	"github.com/atefhaloui/zitadel-go/v3/pkg/client"
+	"github.com/atefhaloui/zitadel-go/v3/pkg/client/zitadel/auth"
+	"github.com/atefhaloui/zitadel-go/v3/pkg/http/middleware"
+	"github.com/atefhaloui/zitadel-go/v3/pkg/zitadel"
 )
 
 var (

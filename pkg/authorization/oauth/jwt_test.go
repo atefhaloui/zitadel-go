@@ -13,9 +13,9 @@ import (
 	"github.com/golang-jwt/jwt/v5"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/zitadel/zitadel-go/v3/pkg/authorization"
-	"github.com/zitadel/zitadel-go/v3/pkg/authorization/oauth"
-	"github.com/zitadel/zitadel-go/v3/pkg/zitadel"
+	"github.com/atefhaloui/zitadel-go/v3/pkg/authorization"
+	"github.com/atefhaloui/zitadel-go/v3/pkg/authorization/oauth"
+	"github.com/atefhaloui/zitadel-go/v3/pkg/zitadel"
 )
 
 //goland:noinspection HttpUrlsUsage

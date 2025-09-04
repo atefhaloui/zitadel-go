@@ -54,7 +54,7 @@ COPY --from=base /proto/include /proto/include
 ARG PROTOC_GEN_GO_GRPC_VERSION=1.3.0
 ARG PROTOC_GEN_GO_VERSION=1.31.0
 
-WORKDIR /go/src/github.com/zitadel/zitadel-go
+WORKDIR /go/src/github.com/atefhaloui/zitadel-go
 RUN go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v${PROTOC_GEN_GO_GRPC_VERSION}
 RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@v${PROTOC_GEN_GO_VERSION}
 
@@ -62,7 +62,7 @@ RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@v${PROTOC_GEN_GO_VER
 ## Go base build
 #######################
 FROM go-dep AS zitadel-client
-ARG PROJECT_PATH=github.com/zitadel/zitadel-go/v3/pkg/client
+ARG PROJECT_PATH=github.com/atefhaloui/zitadel-go/v3/pkg/client
 
 COPY --from=base /proto /proto
 COPY --from=base /usr/local/bin /usr/local/bin/.
@@ -107,5 +107,5 @@ RUN ./build/zitadel/generate-grpc-client.sh ${PROJECT_PATH} \
 ## prepare generated files for output
 #######################
 FROM scratch AS zitadel-copy
-ARG PROJECT_PATH=github.com/zitadel/zitadel-go/v3/pkg/client
+ARG PROJECT_PATH=github.com/atefhaloui/zitadel-go/v3/pkg/client
 COPY --from=zitadel-client /zitadel-api/go/src/${PROJECT_PATH}/zitadel /zitadel

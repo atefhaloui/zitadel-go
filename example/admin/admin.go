@@ -3,14 +3,14 @@ package main
 import (
 	"context"
 	"flag"
-	"github.com/zitadel/zitadel-go/v3/pkg/client/middleware"
+	"github.com/atefhaloui/zitadel-go/v3/pkg/client/middleware"
 	"log"
 
 	"github.com/zitadel/oidc/v3/pkg/oidc"
 
-	"github.com/zitadel/zitadel-go/v3/pkg/client/admin"
-	"github.com/zitadel/zitadel-go/v3/pkg/client/zitadel"
-	pb "github.com/zitadel/zitadel-go/v3/pkg/client/zitadel/admin"
+	"github.com/atefhaloui/zitadel-go/v3/pkg/client/admin"
+	"github.com/atefhaloui/zitadel-go/v3/pkg/client/zitadel"
+	pb "github.com/atefhaloui/zitadel-go/v3/pkg/client/zitadel/admin"
 )
 
 var (

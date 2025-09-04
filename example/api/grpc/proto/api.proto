@@ -4,7 +4,7 @@ package zitadel.go.example.api.v3alpha;
 
 import "google/protobuf/struct.proto";
 
-option go_package = "github.com/zitadel/zitadel-go/example/api/grpc/v3alpha";
+option go_package = "github.com/atefhaloui/zitadel-go/example/api/grpc/v3alpha";
 
 service ExampleService {
 

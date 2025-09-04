@@ -12,7 +12,7 @@ import (
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/clientcredentials"
 
-	"github.com/zitadel/zitadel-go/v3/pkg/authorization"
+	"github.com/atefhaloui/zitadel-go/v3/pkg/authorization"
 )
 
 type TokenSourceInitializer func(ctx context.Context, issuer string) (oauth2.TokenSource, error)

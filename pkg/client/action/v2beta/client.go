@@ -3,8 +3,8 @@ package v2beta
 import (
 	"context"
 
-	"github.com/zitadel/zitadel-go/v3/pkg/client/zitadel"
-	action "github.com/zitadel/zitadel-go/v3/pkg/client/zitadel/action/v2beta"
+	"github.com/atefhaloui/zitadel-go/v3/pkg/client/zitadel"
+	action "github.com/atefhaloui/zitadel-go/v3/pkg/client/zitadel/action/v2beta"
 )
 
 type Client struct {

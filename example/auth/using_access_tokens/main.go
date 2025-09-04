@@ -7,9 +7,9 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/zitadel/zitadel-go/v3/pkg/client"
-	"github.com/zitadel/zitadel-go/v3/pkg/client/zitadel/management"
-	"github.com/zitadel/zitadel-go/v3/pkg/zitadel"
+	"github.com/atefhaloui/zitadel-go/v3/pkg/client"
+	"github.com/atefhaloui/zitadel-go/v3/pkg/client/zitadel/management"
+	"github.com/atefhaloui/zitadel-go/v3/pkg/zitadel"
 )
 
 var (

@@ -9,7 +9,7 @@ package v2beta
 import (
 	_ "github.com/envoyproxy/protoc-gen-validate/validate"
 	_ "github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2/options"
-	v2beta "github.com/zitadel/zitadel-go/v3/pkg/client/zitadel/object/v2beta"
+	v2beta "github.com/atefhaloui/zitadel-go/v3/pkg/client/zitadel/object/v2beta"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"

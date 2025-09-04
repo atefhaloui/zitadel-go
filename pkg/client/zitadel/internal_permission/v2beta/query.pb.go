@@ -8,7 +8,7 @@ package internal_permission
 
 import (
 	_ "github.com/envoyproxy/protoc-gen-validate/validate"
-	v2beta "github.com/zitadel/zitadel-go/v3/pkg/client/zitadel/filter/v2beta"
+	v2beta "github.com/atefhaloui/zitadel-go/v3/pkg/client/zitadel/filter/v2beta"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	timestamppb "google.golang.org/protobuf/types/known/timestamppb"
