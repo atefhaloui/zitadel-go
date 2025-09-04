@@ -1,4 +1,4 @@
-module github.com/zitadel/zitadel-go/v3
+module github.com/atefhaloui/zitadel-go/v3
 
 go 1.23.7
 
