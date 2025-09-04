@@ -136,7 +136,7 @@ func newConnection(
 	tokenSource oauth2.TokenSource,
 	opts ...grpc.DialOption,
 ) (*grpc.ClientConn, error) {
-	transportCreds, err := transportCredentials(zitadel.Domain(), zitadel.IsTLS(), zitadel.IsInsecureSkipVerifyTLS())
+	transportCreds, err := transportCredentials(zitadel.Domain(), zitadel.Target(), zitadel.IsTLS(), zitadel.IsInsecureSkipVerifyTLS())
 	if err != nil {
 		return nil, err
 	}
@@ -144,6 +144,13 @@ func newConnection(
 	dialOptions := []grpc.DialOption{
 		grpc.WithTransportCredentials(transportCreds),
 		grpc.WithPerRPCCredentials(&cred{tls: zitadel.IsTLS(), tokenSource: tokenSource}),
+	}
+	// If a target is specified, we have to set the ':authority' to the specified domain
+	if zitadel.Target() != "" {
+		extraOptions := []grpc.DialOption{
+			grpc.WithAuthority(zitadel.Domain()),
+		}
+		dialOptions = append(dialOptions, extraOptions...)
 	}
 	dialOptions = append(dialOptions, opts...)
 

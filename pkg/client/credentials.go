@@ -56,14 +56,25 @@ func requestMetadataFromToken(token *oauth2.Token) map[string]string {
 	}
 }
 
-func transportCredentials(domain string, withTLS bool, insecureSkipVerifyTLS bool) (credentials.TransportCredentials, error) {
+func transportCredentials(domain string, target string, withTLS bool, insecureSkipVerifyTLS bool) (credentials.TransportCredentials, error) {
 	if !withTLS {
 		return insecure.NewCredentials(), nil
 	}
-	tlsConfig := &tls.Config{
-		ServerName:         domain,
-		InsecureSkipVerify: insecureSkipVerifyTLS,
+
+	var tlsConfig *tls.Config
+
+	if target != "" {
+		tlsConfig = &tls.Config{
+			ServerName:         domain,
+			InsecureSkipVerify: insecureSkipVerifyTLS,
+		}
+	} else {
+		tlsConfig = &tls.Config{
+			ServerName:         target,
+			InsecureSkipVerify: insecureSkipVerifyTLS,
+		}
 	}
+
 	if insecureSkipVerifyTLS {
 		return credentials.NewTLS(tlsConfig), nil
 	}

@@ -10,6 +10,7 @@ import (
 // and is dependent of the provided information and initialization of such.
 type Zitadel struct {
 	domain                string
+	target                string
 	port                  string
 	tls                   bool
 	insecureSkipVerifyTLS bool
@@ -18,6 +19,7 @@ type Zitadel struct {
 func New(domain string, options ...Option) *Zitadel {
 	zitadel := &Zitadel{
 		domain:                domain,
+		target:                "",
 		port:                  "443",
 		tls:                   true,
 		insecureSkipVerifyTLS: false,
@@ -55,6 +57,14 @@ func WithPort(port uint16) Option {
 	}
 }
 
+// WithTarget allows to connect to a ZITADEL instance specifying a different target IP/DNS different from the domain.
+// If this flag is set, the :authority header will be set to the specified domain.
+func WithTarget(target string) Option {
+	return func(z *Zitadel) {
+		z.target = target
+	}
+}
+
 // Origin returns the HTTP Origin (schema://hostname[:port]), e.g.
 // https://your-instance.zitadel.cloud
 // https://your-domain.com
@@ -63,8 +73,11 @@ func (z *Zitadel) Origin() string {
 	return buildOrigin(z.domain, z.port, z.tls)
 }
 
-// Host returns the domain:port (even if the default port is used)
+// Host returns the domain:port or (even if the default port is used)
 func (z *Zitadel) Host() string {
+	if z.target != "" {
+		return z.target + ":" + z.port
+	}
 	return z.domain + ":" + z.port
 }
 
@@ -78,6 +91,10 @@ func (z *Zitadel) IsInsecureSkipVerifyTLS() bool {
 
 func (z *Zitadel) Domain() string {
 	return z.domain
+}
+
+func (z *Zitadel) Target() string {
+	return z.target
 }
 
 func buildOrigin(hostname string, externalPort string, tls bool) string {
