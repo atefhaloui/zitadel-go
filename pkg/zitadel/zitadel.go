@@ -73,7 +73,7 @@ func (z *Zitadel) Origin() string {
 	return buildOrigin(z.domain, z.port, z.tls)
 }
 
-// Host returns the domain:port or (even if the default port is used)
+// Host returns the domain:port or target:port (even if the default port is used)
 func (z *Zitadel) Host() string {
 	if z.target != "" {
 		return z.target + ":" + z.port
